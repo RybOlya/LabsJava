@@ -1,5 +1,10 @@
 package ua.lviv.iot.lab2.models;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Studio{
     private int apartmentNumber;
     private int area;
@@ -20,41 +25,6 @@ public class Studio{
         return apartmentNumber;
     }
 
-    public void setApartmentNumber(int apartmentNumber) {
-        this.apartmentNumber = apartmentNumber;
-    }
-
-    public int getArea() {
-        return area;
-    }
-
-    public void setArea(int area) {
-        this.area = area;
-    }
-
-    public int getFloor() {
-        return floor;
-    }
-
-    public void setFloor(int floor) {
-        this.floor = floor;
-    }
-
-    public int getBedrooms() {
-        return bedrooms;
-    }
-
-    public void setBedrooms(int bedrooms) {
-        this.bedrooms = bedrooms;
-    }
-
-    public String getStateOfApartment() {
-        return stateOfApartment;
-    }
-
-    public void setStateOfApartment(String stateOfApartment) {
-        this.stateOfApartment = stateOfApartment;
-    }
 
     @Override
     public String toString() {
