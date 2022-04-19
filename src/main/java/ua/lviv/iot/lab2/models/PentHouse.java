@@ -1,5 +1,10 @@
 package ua.lviv.iot.lab2.models;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class PentHouse extends Studio{
     private Boolean privateRooftop;
 
@@ -15,13 +20,5 @@ public class PentHouse extends Studio{
         return "PentHouse: "
                 + "privateRooftop= " + privateRooftop + " "
                 +super.toString();
-    }
-
-    public Boolean getPrivateRooftop() {
-        return privateRooftop;
-    }
-
-    public void setPrivateRooftop(Boolean privateRooftop) {
-        this.privateRooftop = privateRooftop;
     }
 }

@@ -1,5 +1,10 @@
 package ua.lviv.iot.lab2.models;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class InfrastructureProximity {
     private float school;
     private float kindergarten;
@@ -28,50 +33,5 @@ public class InfrastructureProximity {
                 "m, gym=" + gym +
                 "m, entertainment=" + entertainment +
                 "m, ";
-    }
-
-    public float getSchool() {
-        return school;
-    }
-
-    public void setSchool(float school) {
-        this.school = school;
-    }
-
-    public float getKindergarten() {
-        return kindergarten;
-    }
-
-    public void setKindergarten(float kindergarten) {
-        this.kindergarten = kindergarten;
-    }
-
-    public float getGroceries() {
-        return groceries;
-    }
-
-    public void setGroceries(float groceries) {
-        this.groceries = groceries;
-    }
-
-    public float getPharmacy() {
-        return pharmacy;
-    }
-
-    public void setPharmacy(float pharmacy) {
-        this.pharmacy = pharmacy;
-    }
-    public float getGym() {
-        return gym;
-    }
-    public void setGym(float gym) {
-        this.gym = gym;
-    }
-    public float getEntertainment() {
-        return entertainment;
-    }
-
-    public void setEntertainment(float entertainment) {
-        this.entertainment = entertainment;
     }
 }

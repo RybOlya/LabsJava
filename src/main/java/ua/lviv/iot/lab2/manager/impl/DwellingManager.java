@@ -1,10 +1,14 @@
 package ua.lviv.iot.lab2.manager.impl;
 
 import ua.lviv.iot.lab2.manager.IDwellingManager;
+import ua.lviv.iot.lab2.models.Choice;
 import ua.lviv.iot.lab2.models.Dwelling;
+import ua.lviv.iot.lab2.models.Streets;
 
+import java.sql.Array;
 import java.text.Collator;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class DwellingManager  implements IDwellingManager {
     private Map<String, List<Dwelling>> dwellingsMap = new HashMap<>();
@@ -35,8 +39,9 @@ public class DwellingManager  implements IDwellingManager {
 
     @Override
     public Dwelling findByLocation(List<Dwelling> dwellings, String location) {
+        String[] address = location.split("\\s*,\\s*");
         for(Dwelling dwelling : dwellings) {
-            if(dwelling.getLocation().equals(location)) {
+            if(dwelling.getBuildingNumber().equals(address[0])&&dwelling.streetName.toString().equals(address[1])) {
                 return dwelling;
             }
         }
@@ -44,18 +49,25 @@ public class DwellingManager  implements IDwellingManager {
     }
 
     @Override
-    public void sortByPrice(List<Dwelling> dwellings, boolean isReversed) {
-        if(isReversed)
+    public void sortByPrice(List<Dwelling> dwellings, Choice order) {
+        if(order == Choice.DESCENDING)
             dwellings.sort(Collections.reverseOrder(Comparator.comparing(Dwelling::getPricePerSquareMeter)));
         else
             dwellings.sort(Comparator.comparing(Dwelling::getPricePerSquareMeter));
     }
 
     @Override
-    public void sortByLocation(List<Dwelling> dwellings, boolean isReversed) {
-        if(isReversed)
-            dwellings.sort(Collections.reverseOrder(Comparator.comparing(Dwelling::getLocation)));
-        else
-            dwellings.sort(Comparator.comparing(Dwelling::getLocation));
+    public void sortByLocation(List<Dwelling> dwellings, Choice order) {
+        if(order == Choice.ALPHABETICAL){
+            List<Streets> desiredStreetsOrder= new ArrayList<>(Arrays.asList(Streets.values()));
+            Collections.reverse(desiredStreetsOrder);
+            Comparator<Streets> streetsOrder = Comparator.comparingInt(desiredStreetsOrder::indexOf);
+            dwellings.sort(Comparator.comparing(Dwelling::getStreetName, streetsOrder));
+        }
+        else {
+            List<Streets> desiredStreetsOrder= new ArrayList<>(Arrays.asList(Streets.values()));
+            Comparator<Streets> streetsOrder = Comparator.comparingInt(desiredStreetsOrder::indexOf);
+            dwellings.sort(Comparator.comparing(Dwelling::getStreetName, streetsOrder));
+        }
     }
 }
