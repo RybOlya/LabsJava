@@ -3,10 +3,12 @@ package ua.lviv.iot.lab2;
 import ua.lviv.iot.lab2.manager.impl.DwellingManager;
 import ua.lviv.iot.lab2.models.*;
 
+import java.io.*;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException {
+
         List<Dwelling> availableDwellings = new LinkedList<>();
         DwellingManager manager = new DwellingManager();
         Studio studioOnStusa = new Studio(25, 21, 3, 2,
@@ -55,4 +57,5 @@ public class Main {
         String location = scanText.nextLine();
         System.out.println(manager.findByLocation(availableDwellings,location));
     }
+
 }

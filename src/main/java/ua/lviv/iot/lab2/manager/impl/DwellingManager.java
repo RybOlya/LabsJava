@@ -5,25 +5,20 @@ import ua.lviv.iot.lab2.models.Choice;
 import ua.lviv.iot.lab2.models.Dwelling;
 import ua.lviv.iot.lab2.models.Streets;
 
-import java.sql.Array;
-import java.text.Collator;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class DwellingManager  implements IDwellingManager {
-    private Map<String, List<Dwelling>> dwellingsMap = new HashMap<>();
-    Collator collator = Collator.getInstance(new Locale("ua", "UA"));
+    private final Map<String, Dwelling> dwellingsMap = new HashMap<>();
     @Override
     public void addDwelling(List<Dwelling> dwellings) {
-        dwellings.forEach(dwelling -> {
-            String typeName = dwelling.getName();
-            var existingDwellings = dwellingsMap.get(typeName);
-            if(existingDwellings == null) {
-                existingDwellings = new LinkedList<Dwelling>();
-                dwellingsMap.put(typeName, existingDwellings);
-            }
-            existingDwellings.add(dwelling);
-        });
+        for(Dwelling dwelling : dwellings){
+            if(dwellingsMap.containsKey(generateKey(dwelling)))
+               throw new RuntimeException("Dwelling Already Exists");
+            dwellingsMap.put(generateKey(dwelling),dwelling);
+        }
+    }
+    private String generateKey(Dwelling dwelling){
+        return String.format("%s-%s", dwelling.getName(), dwelling.getStreetName());
     }
 
     @Override
@@ -60,14 +55,21 @@ public class DwellingManager  implements IDwellingManager {
     public void sortByLocation(List<Dwelling> dwellings, Choice order) {
         if(order == Choice.ALPHABETICAL){
             List<Streets> desiredStreetsOrder= new ArrayList<>(Arrays.asList(Streets.values()));
-            Collections.reverse(desiredStreetsOrder);
             Comparator<Streets> streetsOrder = Comparator.comparingInt(desiredStreetsOrder::indexOf);
             dwellings.sort(Comparator.comparing(Dwelling::getStreetName, streetsOrder));
         }
         else {
             List<Streets> desiredStreetsOrder= new ArrayList<>(Arrays.asList(Streets.values()));
+            Collections.reverse(desiredStreetsOrder);
             Comparator<Streets> streetsOrder = Comparator.comparingInt(desiredStreetsOrder::indexOf);
             dwellings.sort(Comparator.comparing(Dwelling::getStreetName, streetsOrder));
         }
+    }
+    public Collection<Dwelling> getAllDwellings(){
+        return dwellingsMap.values();
+    }
+    @Override
+    public String toString() {
+        return "Map"+dwellingsMap;
     }
 }

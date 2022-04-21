@@ -36,19 +36,17 @@ public abstract class Dwelling{
     }
 
 
-
+    public String getHeaders(){
+        return "col1 col2 col3";
+    }
+    public String toCSV(){
+        return name + ","+ buildingNumber + ", "+ streetName+" St.";
+    }
     @Override
     public String toString() {
         return " Name='" + name + '\'' +
                 ", location='" + buildingNumber + ", "
-                + streetName+" St." + '\'' +
-                ", pricePerSquareMeter=" + pricePerSquareMeter +
-                ", airQuality=" + airQuality +
-                ", parking=" + parking +
-                ", heating='" + heating + '\'' +
-                ", security=" + security +
-                ", " + inf;
-
+                + streetName+" St.";
     }
 
 }
