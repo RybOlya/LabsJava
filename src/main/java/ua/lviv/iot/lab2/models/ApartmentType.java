@@ -1,14 +1,15 @@
 package ua.lviv.iot.lab2.models;
 
 
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Comparator;
 import java.util.TreeSet;
 
-@Setter
-@Getter
+@Setter(AccessLevel.NONE)
+@Getter(AccessLevel.NONE)
 public class ApartmentType extends Dwelling{
     private boolean elevator;
     private boolean concierge;

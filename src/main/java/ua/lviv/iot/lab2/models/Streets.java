@@ -1,7 +1,10 @@
 package ua.lviv.iot.lab2.models;
 
-import java.util.Comparator;
+import lombok.AccessLevel;
+import lombok.Getter;
 
+import java.util.Comparator;
+@Getter(AccessLevel.NONE)
 public enum Streets {
     BANDERY("Bandery"),
     DOROSHENKA("Doroshenka"),
@@ -14,9 +17,9 @@ public enum Streets {
     private Streets(String name) {
         this.name = name;
     }
-    public String getStreetName() {
+    /*public String getStreetName() {
         return this.name;
-    }
+    }*/
     public Comparator<Streets> streetsComparator() {
         return this.streetsComparator;
     }

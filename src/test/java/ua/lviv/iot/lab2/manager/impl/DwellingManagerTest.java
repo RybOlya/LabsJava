@@ -23,7 +23,6 @@ class DwellingManagerTest {
     @AfterEach
     void tearDown() throws Exception{
     }
-    @Test   public void gettersAndSettersShouldFunctionCorrectly() {     BeanTester tester = new BeanTester();     tester.testBean(Studio.class); tester.testBean(InfrastructureProximity.class);    }
     @Test
     public void testGeneral(){
         manager.sortByPrice(dwellings, Choice.ASCENDING);

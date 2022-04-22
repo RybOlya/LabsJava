@@ -1,11 +1,10 @@
 package ua.lviv.iot.lab2.models;
 
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
-
-@Getter
-@Setter
-
+@Getter(AccessLevel.NONE)
+@Setter(AccessLevel.NONE)
 public class PentHouse extends Studio{
     private Boolean privateRooftop;
     public PentHouse(int apartmentNumber, int area, int floor, int bedrooms, String stateOfApartment,

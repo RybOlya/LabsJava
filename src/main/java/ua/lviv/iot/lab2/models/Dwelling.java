@@ -1,10 +1,11 @@
 package ua.lviv.iot.lab2.models;
 
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
+@Getter(AccessLevel.NONE)
+@Setter(AccessLevel.NONE)
 public abstract class Dwelling{
     private String name;
     private String buildingNumber;
@@ -36,6 +37,7 @@ public abstract class Dwelling{
     public String toCSV(){
         return name + ","+ buildingNumber + ", "+ streetName+" St.";
     }*/
+
     @Override
     public String toString() {
         return " Name='" + name + '\'' +
@@ -43,4 +45,19 @@ public abstract class Dwelling{
                 + streetName+" St.";
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getBuildingNumber() {
+        return buildingNumber;
+    }
+
+    public Streets getStreetName() {
+        return streetName;
+    }
+
+    public float getPricePerSquareMeter() {
+        return pricePerSquareMeter;
+    }
 }
