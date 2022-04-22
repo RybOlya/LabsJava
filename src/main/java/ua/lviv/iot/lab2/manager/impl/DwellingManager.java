@@ -36,7 +36,7 @@ public class DwellingManager  implements IDwellingManager {
     public Dwelling findByLocation(List<Dwelling> dwellings, String location) {
         String[] address = location.split("\\s*,\\s*");
         for(Dwelling dwelling : dwellings) {
-            if(dwelling.getBuildingNumber().equals(address[0])&&dwelling.streetName.toString().equals(address[1])) {
+            if(dwelling.getBuildingNumber().equals(address[0])&&dwelling.getStreetName().toString().equals(address[1])) {
                 return dwelling;
             }
         }

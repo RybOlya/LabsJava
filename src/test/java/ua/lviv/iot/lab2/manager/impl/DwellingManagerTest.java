@@ -1,6 +1,7 @@
 package ua.lviv.iot.lab2.manager.impl;
 
 import org.junit.jupiter.api.*;
+import org.meanbean.test.BeanTester;
 import ua.lviv.iot.lab2.models.*;
 import java.util.*;
 
@@ -22,14 +23,13 @@ class DwellingManagerTest {
     @AfterEach
     void tearDown() throws Exception{
     }
+    @Test   public void gettersAndSettersShouldFunctionCorrectly() {     BeanTester tester = new BeanTester();     tester.testBean(Studio.class); tester.testBean(InfrastructureProximity.class);    }
     @Test
     public void testGeneral(){
         manager.sortByPrice(dwellings, Choice.ASCENDING);
-        String str = manager.toString();
-        assertNotNull(str);
+        assertNotNull(manager.toString());
         manager.sortByPrice(dwellings, Choice.DESCENDING);
-        String str1 = manager.toString();
-        assertNotNull(str);
+        assertNotNull(manager.toString());
         assertNotNull(manager.findByName(dwellings,"Provesin"));
         assertNotNull(manager.findByLocation(dwellings,"9, Stusa"));
     }
@@ -87,7 +87,7 @@ class DwellingManagerTest {
         apartmentsStusa.add(studioOnStusa);
         apartmentsStusa.add(pentHouseOnStusa);
         dwellings.add(new ApartmentType("Highrise on Stusa","9",Streets.STUSA,
-                30000, 4,31,true, Heating.INDIVIDUAL, true, 800,
+                30000, apartmentsStusa,4,31,true, Heating.INDIVIDUAL, true, 800,
                 200, 200, 500, 500, 100, true, true));
         dwellings.add(new CottageTown("Provesin","162", Streets.GLYNYANSKY_TRACT,
                 31000,2,31,true,Heating.INDIVIDUAL, true,300,

@@ -2,10 +2,13 @@ package ua.lviv.iot.lab2.models;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.Synchronized;
+
+import java.io.Serializable;
 
 @Getter
 @Setter
-public class Studio{
+public class Studio implements Serializable {
     private int apartmentNumber;
     private int area;
     private int floor;
@@ -21,8 +24,7 @@ public class Studio{
         this.stateOfApartment = stateOfApartment;
     }
 
-    public int getApartmentNumber() {
-        return apartmentNumber;
+    public Studio() {
     }
 
 

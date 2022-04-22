@@ -3,16 +3,12 @@ package ua.lviv.iot.lab2.models;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Arrays;
-import java.util.HashMap;
-
 @Getter
 @Setter
 public abstract class Dwelling{
-
     private String name;
     private String buildingNumber;
-    public Streets streetName;
+    private Streets streetName;
     private float pricePerSquareMeter;
     private int numberOfFloors;
     private int airQuality;
@@ -34,14 +30,12 @@ public abstract class Dwelling{
         this.security = security;
         this.inf = new InfrastructureProximity(school,kindergarten,groceries,pharmacy,gym,entertainment);
     }
-
-
-    public String getHeaders(){
+    /*public String getHeaders(){
         return "col1 col2 col3";
     }
     public String toCSV(){
         return name + ","+ buildingNumber + ", "+ streetName+" St.";
-    }
+    }*/
     @Override
     public String toString() {
         return " Name='" + name + '\'' +

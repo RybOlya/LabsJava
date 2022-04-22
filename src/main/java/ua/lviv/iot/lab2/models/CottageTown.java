@@ -1,7 +1,5 @@
 package ua.lviv.iot.lab2.models;
 
-import java.util.HashMap;
-
 public class CottageTown extends Dwelling{
     private int numberOfHouses;
 
@@ -10,12 +8,4 @@ public class CottageTown extends Dwelling{
         this.numberOfHouses = numberOfHouses;
     }
 
-
-    public int getNumberOfHouses() {
-        return numberOfHouses;
-    }
-
-    public void setNumberOfHouses(int numberOfHouses) {
-        this.numberOfHouses = numberOfHouses;
-    }
 }

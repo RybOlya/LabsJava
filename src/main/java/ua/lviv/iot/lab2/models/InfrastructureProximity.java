@@ -3,9 +3,11 @@ package ua.lviv.iot.lab2.models;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
+
 @Getter
 @Setter
-public class InfrastructureProximity {
+public class InfrastructureProximity implements Serializable {
     private float school;
     private float kindergarten;
     private float groceries;
@@ -21,6 +23,9 @@ public class InfrastructureProximity {
         this.pharmacy = pharmacy;
         this.gym = gym;
         this.entertainment = entertainment;
+    }
+
+    public InfrastructureProximity() {
     }
 
     @Override

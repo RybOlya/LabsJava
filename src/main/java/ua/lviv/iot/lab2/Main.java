@@ -2,12 +2,10 @@ package ua.lviv.iot.lab2;
 
 import ua.lviv.iot.lab2.manager.impl.DwellingManager;
 import ua.lviv.iot.lab2.models.*;
-
-import java.io.*;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args){
 
         List<Dwelling> availableDwellings = new LinkedList<>();
         DwellingManager manager = new DwellingManager();
@@ -19,7 +17,7 @@ public class Main {
         aprtmentsStusa.add(studioOnStusa);
         aprtmentsStusa.add(pentHouseOnStusa);
         Dwelling highRiseOnStusa = new ApartmentType("Highrise on Stusa","9",Streets.STUSA,
-                30000, 4,31,true, Heating.INDIVIDUAL, true, 800,
+                30000, aprtmentsStusa,4,31,true, Heating.INDIVIDUAL, true, 800,
                 200, 200, 500, 500, 100, true, true);
         Dwelling townhouseProvesin = new CottageTown("Provesin","162", Streets.GLYNYANSKY_TRACT,
                 31000,2,31,true,Heating.INDIVIDUAL, true,300,
@@ -57,5 +55,4 @@ public class Main {
         String location = scanText.nextLine();
         System.out.println(manager.findByLocation(availableDwellings,location));
     }
-
 }
