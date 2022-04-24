@@ -4,8 +4,8 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter(AccessLevel.NONE)
-@Setter(AccessLevel.NONE)
+@Getter
+@Setter
 public abstract class Dwelling{
     private String name;
     private String buildingNumber;
@@ -31,12 +31,12 @@ public abstract class Dwelling{
         this.security = security;
         this.inf = new InfrastructureProximity(school,kindergarten,groceries,pharmacy,gym,entertainment);
     }
-    /*public String getHeaders(){
-        return "col1 col2 col3";
+    public String getHeaders(){
+        return "name, buildingNumber, streetName";
     }
     public String toCSV(){
         return name + ","+ buildingNumber + ", "+ streetName+" St.";
-    }*/
+    }
 
     @Override
     public String toString() {
@@ -45,7 +45,7 @@ public abstract class Dwelling{
                 + streetName+" St.";
     }
 
-    public String getName() {
+    /*public String getName() {
         return name;
     }
 
@@ -59,5 +59,5 @@ public abstract class Dwelling{
 
     public float getPricePerSquareMeter() {
         return pricePerSquareMeter;
-    }
+    }*/
 }

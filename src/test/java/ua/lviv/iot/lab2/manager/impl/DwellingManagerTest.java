@@ -1,13 +1,12 @@
 package ua.lviv.iot.lab2.manager.impl;
 
 import org.junit.jupiter.api.*;
-import org.meanbean.test.BeanTester;
 import ua.lviv.iot.lab2.models.*;
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class DwellingManagerTest {
+public class DwellingManagerTest {
     private final DwellingManager manager = new DwellingManager();
     List<Dwelling> dwellings = generateListOfDwellings();
     @BeforeAll
@@ -76,7 +75,7 @@ class DwellingManagerTest {
                         " Name='Provesin', location='162, Glynyansky Trakt St.]",dwellings.toString());
     }
 
-    private List<Dwelling> generateListOfDwellings() {
+    public List<Dwelling> generateListOfDwellings() {
         List<Dwelling> dwellings = new LinkedList<>();
         Studio studioOnStusa = new Studio(25, 21, 3, 2,
                 "put into operation");

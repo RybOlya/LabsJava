@@ -7,4 +7,12 @@ public class DetachedHouse extends Dwelling{
         super(name, buildingNumber, streetName, pricePerSquareMeter, numberOfFloors, airQuality, parking, heating, security, school, kindergarten, groceries, pharmacy, gym, entertainment);
         this.privatePlotAreaInAcres = privatePlotAreaInAcres;
     }
+    @Override
+    public String getHeaders(){
+        return super.getHeaders() + ", private plot area in acres";
+    }
+    @Override
+    public String toCSV(){
+        return super.toCSV() + "," +privatePlotAreaInAcres;
+    }
 }

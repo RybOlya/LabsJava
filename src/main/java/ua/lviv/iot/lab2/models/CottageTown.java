@@ -7,5 +7,13 @@ public class CottageTown extends Dwelling{
         super(name, buildingNumber, streetName, pricePerSquareMeter, numberOfFloors, airQuality, parking, heating, security, school, kindergarten, groceries, pharmacy, gym, entertainment);
         this.numberOfHouses = numberOfHouses;
     }
+    @Override
+    public String getHeaders(){
+        return super.getHeaders() + ", number of houses";
+    }
+    @Override
+    public String toCSV(){
+        return super.toCSV() + "," + numberOfHouses;
+    }
 
 }

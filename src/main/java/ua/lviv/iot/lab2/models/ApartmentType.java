@@ -20,15 +20,15 @@ public class ApartmentType extends Dwelling{
         this.concierge = concierge;
         this.apartments = apartments;
     }
-    /*@Override
+    @Override
     public String getHeaders(){
-        return super.getHeaders() + ", elevator, concierge";
+        return super.getHeaders() + ", apartments available, elevator, concierge";
     }
     @Override
     public String toCSV(){
-        return super.toCSV() + "," + elevator+ "," + concierge;
+        return super.toCSV()+ "," + apartments.size() + "," + elevator+ "," + concierge;
     }
-    @Override*/
+    @Override
     public String toString() {
         return super.toString()+
                 " elevator=" + elevator +

@@ -49,6 +49,7 @@ public class DwellingManager  implements IDwellingManager {
             dwellings.sort(Collections.reverseOrder(Comparator.comparing(Dwelling::getPricePerSquareMeter)));
         else
             dwellings.sort(Comparator.comparing(Dwelling::getPricePerSquareMeter));
+
     }
 
     @Override
