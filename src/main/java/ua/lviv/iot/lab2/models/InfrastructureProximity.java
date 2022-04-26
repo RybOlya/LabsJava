@@ -5,12 +5,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.io.Serializable;
-
 @Getter(AccessLevel.NONE)
 @Setter(AccessLevel.NONE)
 @AllArgsConstructor()
-public class InfrastructureProximity{
+public class InfrastructureProximity {
     private float school;
     private float kindergarten;
     private float groceries;
@@ -20,13 +18,13 @@ public class InfrastructureProximity{
 
     @Override
     public String toString() {
-        return "InfrastructureProximity: " +
-                "school=" + school +
-                "m, kindergarten=" + kindergarten +
-                "m, groceries=" + groceries +
-                "m, pharmacy=" + pharmacy +
-                "m, gym=" + gym +
-                "m, entertainment=" + entertainment +
-                "m, ";
+        return "InfrastructureProximity: "
+                + "school=" + school
+                + "m, kindergarten=" + kindergarten
+                + "m, groceries=" + groceries
+                + "m, pharmacy=" + pharmacy
+                + "m, gym=" + gym
+                + "m, entertainment=" + entertainment
+                + "m, ";
     }
 }

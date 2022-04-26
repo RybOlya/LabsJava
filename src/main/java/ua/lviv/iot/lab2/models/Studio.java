@@ -1,8 +1,10 @@
 package ua.lviv.iot.lab2.models;
 
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-import java.io.Serializable;
 
 @Getter(AccessLevel.NONE)
 @Setter(AccessLevel.NONE)
@@ -16,13 +18,12 @@ public class Studio {
 
     @Override
     public String toString() {
-        return "Studio: " +
-                "apartmentNumber=" + apartmentNumber +
-                ", area=" + area +
-                ", floor=" + floor +
-                ", bedrooms=" + bedrooms +
-                ", stateOfApartment='" + stateOfApartment + '\'' +
-                ' ';
+        return "Studio: "
+                + "apartmentNumber=" + apartmentNumber
+                + ", area=" + area
+                + ", floor=" + floor
+                + ", bedrooms=" + bedrooms
+                + ", stateOfApartment=" + stateOfApartment;
     }
 
     public int getApartmentNumber() {

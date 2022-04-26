@@ -6,20 +6,29 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public abstract class Dwelling{
+public abstract class Dwelling {
     private String name;
     private String buildingNumber;
     private Streets streetName;
     private float pricePerSquareMeter;
+    @Getter(AccessLevel.NONE)
     private int numberOfFloors;
+    @Getter(AccessLevel.NONE)
     private int airQuality;
+    @Getter(AccessLevel.NONE)
     private Boolean parking;
+    @Getter(AccessLevel.NONE)
     private Heating heating;
+    @Getter(AccessLevel.NONE)
     private Boolean security;
+    @Getter(AccessLevel.NONE)
     private InfrastructureProximity inf;
-    public Dwelling(String name,  String buildingNumber, Streets streetName, float pricePerSquareMeter, int numberOfFloors,
-                    int airQuality, Boolean parking, Heating heating, Boolean security, float school, float kindergarten,
-                    float groceries, float pharmacy, float gym, float entertainment) {
+
+    public Dwelling(String name, String buildingNumber, Streets streetName,
+                    float pricePerSquareMeter, int numberOfFloors, int airQuality,
+                    Boolean parking, Heating heating, Boolean security, float school,
+                    float kindergarten, float groceries, float pharmacy,
+                    float gym, float entertainment) {
         this.name = name;
         this.buildingNumber = buildingNumber;
         this.streetName = streetName;
@@ -29,35 +38,22 @@ public abstract class Dwelling{
         this.parking = parking;
         this.heating = heating;
         this.security = security;
-        this.inf = new InfrastructureProximity(school,kindergarten,groceries,pharmacy,gym,entertainment);
+        this.inf = new InfrastructureProximity(school, kindergarten,
+                                                groceries, pharmacy, gym, entertainment);
     }
-    public String getHeaders(){
-        return "name, buildingNumber, streetName";
+
+    public String getHeaders() {
+        return "name" + "," + "buildingNumber" + "," + "streetName";
     }
-    public String toCSV(){
-        return name + ","+ buildingNumber + ", "+ streetName+" St.";
+
+    public String toCSV() {
+        return name + "," + buildingNumber + "," + streetName + " St.";
     }
 
     @Override
     public String toString() {
-        return " Name='" + name + '\'' +
-                ", location='" + buildingNumber + ", "
-                + streetName+" St.";
+        return " Name='" + name
+                + ", location='" + buildingNumber
+                + ", " + streetName + " St.";
     }
-
-    /*public String getName() {
-        return name;
-    }
-
-    public String getBuildingNumber() {
-        return buildingNumber;
-    }
-
-    public Streets getStreetName() {
-        return streetName;
-    }
-
-    public float getPricePerSquareMeter() {
-        return pricePerSquareMeter;
-    }*/
 }
