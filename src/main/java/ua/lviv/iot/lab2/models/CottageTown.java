@@ -16,7 +16,7 @@ public class CottageTown extends Dwelling {
 
     @Override
     public String getHeaders() {
-        return super.getHeaders() + "," + "number of houses";
+        return super.getHeaders() + ", numberOfHouses";
     }
 
     @Override

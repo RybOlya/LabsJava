@@ -16,7 +16,7 @@ public class DetachedHouse extends Dwelling {
 
     @Override
     public String getHeaders() {
-        return super.getHeaders() + "," + "private plot area in acres";
+        return super.getHeaders() + ", privatePlotAreaInAcres";
     }
 
     @Override

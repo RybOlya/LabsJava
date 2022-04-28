@@ -1,12 +1,14 @@
 package ua.lviv.iot.lab2.manager.impl;
 
+import lombok.Getter;
 import java.util.*;
-
 import ua.lviv.iot.lab2.manager.IDwellingManager;
 import ua.lviv.iot.lab2.models.Choice;
 import ua.lviv.iot.lab2.models.Dwelling;
 import ua.lviv.iot.lab2.models.Streets;
 
+
+@Getter
 public class DwellingManager implements IDwellingManager {
     private final HashMap<String, Dwelling> dwellingsMap = new HashMap<>();
 

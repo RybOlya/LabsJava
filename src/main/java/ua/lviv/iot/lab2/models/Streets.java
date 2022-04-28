@@ -12,6 +12,7 @@ public enum Streets {
     STUSA("Stusa"),
     YAROSLAVENKA("Yaroslavenka");
     public final String name;
+
     @Override
     public String toString() {
         return this.name;

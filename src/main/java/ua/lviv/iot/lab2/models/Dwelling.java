@@ -11,17 +11,11 @@ public abstract class Dwelling {
     private String buildingNumber;
     private Streets streetName;
     private float pricePerSquareMeter;
-    @Getter(AccessLevel.NONE)
     private int numberOfFloors;
-    @Getter(AccessLevel.NONE)
     private int airQuality;
-    @Getter(AccessLevel.NONE)
     private Boolean parking;
-    @Getter(AccessLevel.NONE)
     private Heating heating;
-    @Getter(AccessLevel.NONE)
     private Boolean security;
-    @Getter(AccessLevel.NONE)
     private InfrastructureProximity inf;
 
     public Dwelling(String name, String buildingNumber, Streets streetName,
@@ -39,15 +33,15 @@ public abstract class Dwelling {
         this.heating = heating;
         this.security = security;
         this.inf = new InfrastructureProximity(school, kindergarten,
-                                                groceries, pharmacy, gym, entertainment);
+                groceries, pharmacy, gym, entertainment);
     }
 
     public String getHeaders() {
-        return "name" + "," + "buildingNumber" + "," + "streetName";
+        return "name, buildingNumber, streetName";
     }
 
     public String toCSV() {
-        return name + "," + buildingNumber + "," + streetName + " St.";
+        return name + "," + buildingNumber + "," + streetName;
     }
 
     @Override

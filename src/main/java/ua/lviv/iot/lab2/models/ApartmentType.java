@@ -28,13 +28,12 @@ public class ApartmentType extends Dwelling {
 
     @Override
     public String getHeaders() {
-        return super.getHeaders() + "," + "apartments available" + ","
-                + "elevator" + "," + "concierge";
+        return super.getHeaders() + ", apartmentsAvailable";
     }
 
     @Override
     public String toCSV() {
-        return super.toCSV() + "," + apartments.size() + "," + elevator + "," + concierge;
+        return super.toCSV() + "," + apartments.size();
     }
 
     @Override
