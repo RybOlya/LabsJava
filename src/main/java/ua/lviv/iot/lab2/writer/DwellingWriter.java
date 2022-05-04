@@ -20,7 +20,7 @@ public class DwellingWriter extends DwellingManager {
                     csvOutputFile.toPath(), charSet)) {
                 String previousClassName = "";
                 dwellings.sort(Comparator.comparing(dwelling -> dwelling.getClass().getName()));
-                for (var dwelling : dwellings) {
+                for (Dwelling dwelling : dwellings) {
                     if (!dwelling.getClass().getSimpleName().equals(previousClassName)) {
                         bufferedWriter.write(dwelling.getHeaders());
                         bufferedWriter.write("\r\n");

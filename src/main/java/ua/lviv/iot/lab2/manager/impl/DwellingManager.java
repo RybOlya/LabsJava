@@ -34,7 +34,6 @@ public class DwellingManager implements IDwellingManager {
             }
         }
         return null;
-
     }
 
     @Override

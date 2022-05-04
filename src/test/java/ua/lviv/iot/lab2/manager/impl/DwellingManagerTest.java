@@ -5,10 +5,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.TreeSet;
 import java.util.stream.IntStream;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import org.junit.jupiter.api.*;
 import ua.lviv.iot.lab2.models.*;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class DwellingManagerTest {
     DwellingManager manager;
@@ -40,7 +41,7 @@ public class DwellingManagerTest {
         assertNotNull(manager.toString());
         manager.sortByPrice(dwellings, Choice.DESCENDING);
         assertNotNull(manager.toString());
-        assertNotNull(manager.findByName(dwellings, "Provesin"));
+        assertNull(manager.findByName(dwellings, "NotInList"));
         assertNotNull(manager.findByLocation(dwellings, "9, Stusa"));
     }
 
@@ -52,15 +53,15 @@ public class DwellingManagerTest {
 
     @Test
     void findByNameTest() {
-        var expectedDwellingName = "Provesin";
-        var actualDwellingName = manager.findByName(dwellings, "Provesin").getName();
+        String expectedDwellingName = "Provesin";
+        String actualDwellingName = manager.findByName(dwellings, "Provesin").getName();
         assertEquals(expectedDwellingName, actualDwellingName);
     }
 
     @Test
     void findByLocationTest() {
-        var expectedDwellingName = "Highrise on Stusa";
-        var actualDwellingName = manager.findByLocation(dwellings, "9, Stusa").getName();
+        String expectedDwellingName = "Highrise on Stusa";
+        String actualDwellingName = manager.findByLocation(dwellings, "9, Stusa").getName();
         assertEquals(expectedDwellingName, actualDwellingName);
     }
 

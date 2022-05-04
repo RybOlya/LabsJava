@@ -34,15 +34,15 @@ public class DwellingWriterTest extends DwellingManagerTest {
         dwelling.add(new DetachedHouse("TH TIMBERLAND", "66", Streets.LYSYNETSKA,
                 28000, 3, 34, true, Heating.INDIVIDUAL, true, 300,
                 200, 300, 500, 400, 800, 1.5F));
-
-        try (FileWriter writer = new FileWriter(csvOutputFile)) {
-            DwellingWriter.writeToFile(dwelling);
-        }
-        BufferedReader bufferedReader = new BufferedReader(new FileReader(csvOutputFile));
         int count = 0;
-        while (bufferedReader.readLine() != null)
-            count++;
-        assertEquals(2, count);
+        try (FileWriter writer = new FileWriter(csvOutputFile);
+             BufferedReader bufferedReader = new BufferedReader(new FileReader(csvOutputFile));) {
+            DwellingWriter.writeToFile(dwelling);
+            while(bufferedReader.readLine()!=null){
+                count++;
+            }
+        }
+        assertEquals(2,count);
     }
 
     @Test
