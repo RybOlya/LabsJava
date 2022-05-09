@@ -13,18 +13,17 @@ class RegExpressionTest {
 
     @BeforeAll
     static void beforeAll() throws IOException {
-        String text = "Iyi dost kara gunde belli olur lorem ipsum dolor sit amet, " +
-                "consectetur adipiscing elit. In sit amet turpis a quam molestie feugiat. Etiam fringilla lectus nibh" +
-                ". Vestibulum vehicula finibus augue eget scelerisque.";
+        String text = "Iyi dost kara gunde belli olur lorem ipsum dolor sit amet consectetur adipiscing elit " +
+                "in sit amet turpis a quam molestie feugiat etiam fringilla lectus nibh " +
+                "vestibulum vehicula finibus augue eget scelerisque";
         Files.write(Paths.get("src/test/resources/text.txt"), text.getBytes());
     }
 
     @Test
     void deleteWordWithVowelAndLengthOfNTest() throws Exception {
         regex.deleteWordWithVowelAndLengthOfN();
-        String expected = "Iyi dost kara gunde belli lorem ipsum dolor sit, consectetur" +
-                " adipiscing elit. In sit turpis a quam molestie feugiat. Etiam fringilla lectus nibh. Vestibulum" +
-                " vehicula finibus augue scelerisque.";
+        String expected = "Iyi gunde belli olur lorem ipsum dolor sit amet consectetur adipiscing elit in sit amet " +
+                "turpis a molestie feugiat etiam fringilla lectus vestibulum vehicula finibus augue eget scelerisque";
         String actual = regex.fileToString("src/test/resources/text.txt");
         Assertions.assertEquals(expected, actual);
     }

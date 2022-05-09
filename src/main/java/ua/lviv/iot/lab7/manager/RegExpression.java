@@ -34,7 +34,7 @@ public class RegExpression {
         String filePath = "src/test/resources/text.txt";
         File file = new File(filePath);
         Scanner input = new Scanner(file);
-        String regex1 = "^[AEIOUYaeiouy]";
+        String regex1 = "\\b[^AEIOUYaeiouy]";
         String regex2 = "^[a-zA-Z]{4}$";
         String result = fileToString(filePath);
         Pattern pattern1 = Pattern.compile(regex1);
