@@ -1,5 +1,5 @@
 # Lab task 7
-###Description
+### Description
 - Write the code for the task from the table
 - When writing a program, you need to format according to java code convention.
 - The validity of the code should be done through tests
