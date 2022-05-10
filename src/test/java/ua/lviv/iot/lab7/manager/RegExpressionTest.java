@@ -20,8 +20,8 @@ class RegExpressionTest {
     }
 
     @Test
-    void deleteWordWithVowelAndLengthOfNTest() throws Exception {
-        regex.deleteWordWithVowelAndLengthOfN();
+    void deleteWordWithConsonantAndLengthOfNTest() throws Exception {
+        regex.deleteWordWithConsonantAndLengthOfN();
         String expected = "Iyi gunde belli olur lorem ipsum dolor sit amet consectetur adipiscing elit in sit amet " +
                 "turpis a molestie feugiat etiam fringilla lectus vestibulum vehicula finibus augue eget scelerisque";
         String actual = regex.fileToString("src/test/resources/text.txt");

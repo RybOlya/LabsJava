@@ -11,26 +11,24 @@ import java.util.regex.Pattern;
 public class RegExpression {
     public String fileToString(String filePath) throws Exception {
         String input;
-        Scanner sc = new Scanner(new File(filePath));
         StringBuilder sb = new StringBuilder();
-        while (sc.hasNextLine()) {
-            input = sc.nextLine();
-            sb.append(input);
-        }
-        try {
-            if (sb.toString().equals("")) {
+        try (Scanner sc = new Scanner(new File(filePath))) {
+            while (sc.hasNextLine()) {
+                input = sc.nextLine();
+                sb.append(input);
+            }
 
+            if (sb.toString().equals("")) {
                 throw new Exception("Empty file!");
             }
 
         } catch (Exception e) {
             System.out.println(e);
         }
-        sc.close();
         return sb.toString();
     }
 
-    public void deleteWordWithVowelAndLengthOfN() throws Exception {
+    public void deleteWordWithConsonantAndLengthOfN() throws Exception {
         String filePath = "src/test/resources/text.txt";
         File file = new File(filePath);
         Scanner input = new Scanner(file);
