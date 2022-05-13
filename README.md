@@ -1,5 +1,5 @@
-# 5 - 6 Лабораторна робота
+# Lab task 5 - 6
 
-- *В 5 лабораторній роботі* слід написати модульні тести для коду лабораторної роботи №4 і досягти рівня покриття тестами 80%. Очевидно, що ідеалом є покриття на рівні 100% (тобто кожна лінія коду покрита тестами). Також очевидно, що написання тестів потребує значну кількість часу, якого завжди бракує. Одним з варіантів униклення цієї проблеми є підхід TDD. Для даної лабораторної компромісним значенням буде покриття тестами на рівні 80%
+- * In 5 laboratory work * it is necessary to write unit tests for the code of lab task №4 and to reach a level of coverage by tests of 80%. Obviously, the ideal coverage is 100% (ie each line of code is covered by tests). It is also obvious that writing tests takes a considerable amount of time, which is always lacking. One way to avoid this problem is the TDD approach. For this laboratory compromise value will be coverage by tests at the level of 80%
 
-- *6 Лабораторна робота* присвячена роботі з файлами і операції запису, і також базується на основі лабораторних 3, 5-6. Для реалізованої ієрархії класів в 3-й лабораторній слід реалізувати запис списку об’єктів, які присутні в менеджері, в CSV-файл. Звертаю увагу, що код слід реалізувати лише після здачі 3, 5-6 лабораторних (здаються окремо, при спробі здачі всіх робіт одночасно студент отримає доповнення до його задачі 3). 
+- * In 6 laboratory work * we are working with files and recording operations, and task is based on lab tasks 3-5. For the implemented class hierarchy in the 3rd laboratory, the list of objects present in the manager should be written to the CSV file. Please note that the code should be implemented only after passing 3, 5-6 laboratory.
