@@ -1,3 +1,4 @@
+
 # Lab task 7
 ### Description
 - Write the code for the task from the table
